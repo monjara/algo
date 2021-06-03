@@ -1,17 +1,18 @@
 #include<iostream>
-#include<vector>
 using namespace std;
-int main()
-{
-    vector<int> s(3);
-    cin >> s.at(0) >> s.at(1) >> s.at(2);
-    int count = 0;
-    for (int i = 0; i <s.size(); i++)
-    {
-        if (s.at(i) == 1) {
-            count++;
-        }
+
+int digit_sum(int n){
+   if(n < 10)  return n;
+   return digit_sum(n / 10) + n % 10;
+}
+
+int main() {
+    int N, A, B;
+    cin >> N >> A >> B;
+    int sum = 0;
+    for (int i = 1; i <= N; i++) {
+        if (digit_sum(i) >= A && digit_sum(i) <= B) sum += i;
     }
-    cout << count << endl;;
+    cout << sum << endl;
     return 0;
 }
