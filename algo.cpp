@@ -1,18 +1,15 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
-int digit_sum(int n){
-   if(n < 10)  return n;
-   return digit_sum(n / 10) + n % 10;
-}
-
-int main() {
-    int N, A, B;
-    cin >> N >> A >> B;
-    int sum = 0;
-    for (int i = 1; i <= N; i++) {
-        if (digit_sum(i) >= A && digit_sum(i) <= B) sum += i;
-    }
-    cout << sum << endl;
+int main(){
+    int A, B;
+    cin >> A >> B;
+    int kokei = A + B;
+    int ans;
+    if (kokei >= 15 && B >= 8) ans = 1;
+    else if (kokei >= 10 && B >= 3) ans = 2;
+    else if (kokei >= 3) ans = 3;
+    else ans = 4;
+    cout << ans << endl;
     return 0;
 }
