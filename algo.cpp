@@ -1,18 +1,20 @@
-#include<bits/stdc++.h>
-using namespace std;
-
-int main(){
-    int N, S, D;
-    cin >> N >> S >> D;
-    vector<int> A(N);
-    vector<int> B(N);
+#include<bits/stdc++.h>    
+using namespace std;    
+    
+int main(){    
+    int N, X;
+    cin >> N >> X;
+    vector<double> alcohol(N);
+    double alcohol_sum = 0;
     for (int i = 0; i < N; i++) {
-        cin >> A.at(i) >> B.at(i);
+        int V, P;
+        cin >> V >> P;
+        alcohol_sum += V * P;
+        if (alcohol_sum > X * 100) {
+            cout << i+1 << endl;
+            return 0;
+        }
     }
-    bool dmg_flg = false;
-    for (int i = 0; i < N; i++) {
-        if (S > A.at(i) && D < B.at(i)) dmg_flg = true;
-    }
-    dmg_flg ? cout << "Yes" << endl : cout << "No" << endl;
-    return 0;
-}
+    cout << "-1" << endl;
+    return 0;    
+}    
