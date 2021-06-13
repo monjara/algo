@@ -1,11 +1,11 @@
 #include<iostream>
-#include<cmath>
 using namespace std;
 
 int main() {
-	int x;
-	cin >> x;
-	int out = pow(x, 3);
-	cout << out << endl;
+	int a, b;
+	cin >> a >> b;
+	int area = a * b;
+	int length = (a + b) * 2;
+	cout << area << " " << length << endl;
 	return 0;
 }
