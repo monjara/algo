@@ -1,9 +1,11 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 
-int main(){
-
-    cout << "Hello World" << endl;
-
-    return 0;
+int main() {
+	int x;
+	cin >> x;
+	int out = pow(x, 3);
+	cout << out << endl;
+	return 0;
 }
