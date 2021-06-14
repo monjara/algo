@@ -5,30 +5,52 @@ using namespace std;
 int main() {
 	int n;
 	cin >> n;
-	vector<bool> s(13);
-	vector<bool> h(13);
-	vector<bool> c(13);
-	vector<bool> d(13);
+	vector<vector<int>> one(3, vector<int>(10));
+	vector<vector<int>> two(3, vector<int>(10));
+	vector<vector<int>> three(3, vector<int>(10));
+	vector<vector<int>> four(3, vector<int>(10));
 	for (int i = 0; i < n; i++) {
-		char tmp_char; 
-		int tmp_num;
-		cin >> tmp_char >> tmp_num;
-		if (tmp_char == 'S') s.at(tmp_num - 1) = true;
-		else if (tmp_char == 'H') h.at(tmp_num - 1) = true;
-		else if (tmp_char == 'C') c.at(tmp_num - 1) = true;
-		else if (tmp_char == 'D') d.at(tmp_num - 1) = true;
+		int b, f, r, v;
+		cin >> b >> f >> r >> v;
+		if (b == 1) {
+			one.at(f - 1).at(r - 1) += v;
+		}
+		else if (b == 2) {
+			two.at(f - 1).at(r - 1) += v;
+		}
+		else if (b == 3) {
+			three.at(f - 1).at(r - 1) += v;
+		}
+		else if (b == 4) {
+			four.at(f - 1).at(r - 1) += v;
+		}
 	}
-	for (int i = 0; i < 13; i++) {
-		if (!s.at(i)) cout << "S " << i + 1 << endl;
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 10; j++) {
+			cout << " " << one.at(i).at(j);
+		}
+		cout << endl;
 	}
-	for (int i = 0; i < 13; i++) {
-		if (!h.at(i)) cout << "H " << i + 1 << endl;
+	cout << "####################" << endl;
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 10; j++) {
+			cout << " " << two.at(i).at(j);
+		}
+		cout << endl;
 	}
-	for (int i = 0; i < 13; i++) {
-		if (!c.at(i)) cout << "C " << i + 1 << endl;
+	cout << "####################" << endl;
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 10; j++) {
+			cout << " " << three.at(i).at(j);
+		}
+		cout << endl;
 	}
-	for (int i = 0; i < 13; i++) {
-		if (!d.at(i)) cout << "D " << i + 1 << endl;
+	cout << "####################" << endl;
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 10; j++) {
+			cout << " " << four.at(i).at(j);
+		}
+		cout << endl;
 	}
 	return 0;
 }
