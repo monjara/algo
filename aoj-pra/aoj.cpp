@@ -1,13 +1,14 @@
 #include<iostream>
+#include<iomanip>
+#include<cmath>
 using namespace std;
 
 int main() {
-	int a, b, c;
-	cin >> a >> b >> c;
-	int counter = 0;
-	for (int i = a; i <= b; i++) {
-		if (c % i == 0) counter++;
-	}
-	cout << counter << endl;
+	double a, b;
+	cin >> a >> b;
+	int d = a / b;
+	int r = (int)fmod(a, b);
+	double f = a / b;
+	cout << d << " " << r << " " << fixed << setprecision(8) << f << endl;
 	return 0;
 }
