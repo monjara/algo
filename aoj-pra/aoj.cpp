@@ -1,12 +1,13 @@
 #include<iostream>
-#include<vector>
-#include<algorithm>
 using namespace std;
 
 int main() {
-	vector<int> a(3);
-	cin >> a.at(0) >> a.at(1) >> a.at(2);
-	sort(a.begin(), a.end());
-	cout << a.at(0) << " " << a.at(1) << " " << a.at(2) << endl;
+	int w, h, x, y, r;
+	cin >> w >> h >> x >> y >> r;
+	if (x - r >= 0 && y - r >= 0) {
+		if (w >= x + r && h >= y + r) cout << "Yes" << endl;
+		else cout << "No" << endl;
+	}
+	else cout << "No" << endl;
 	return 0;
 }
