@@ -1,14 +1,16 @@
 #include<iostream>
-#include<iomanip>
-#include<cmath>
 using namespace std;
 
 int main() {
-	double pi = 3.14159265359;
-	double r;
-	cin >> r;
-	double a = pi * r * r;
-	double l = 2 * pi * r;
-	cout << fixed << setprecision(6) << a << " " << l << endl;
+	for (int i = 0; i < 1000000000; i++) {
+		int a,b;
+		string op;
+		cin >> a >> op >> b;
+		if (op == "+") cout << a + b << endl;
+		else if (op == "-") cout << a - b << endl;
+		else if (op == "*") cout << a * b << endl;
+		else if (op == "/") cout << a / b << endl;
+		else if (op == "?") return 0;
+	}
 	return 0;
 }
