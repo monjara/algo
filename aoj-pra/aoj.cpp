@@ -6,11 +6,13 @@ int main() {
 		int h, w;
 		cin >> h >> w;
 		if (h == 0 && w == 0) return 0;
-		for (int i = 0; i < h; i++) {
-			for (int j = 0; j < w; j++) {
-				if (i == 0 || i == h - 1) cout << "#";
-				else if (j == 0 || j == w - 1) cout << "#";
-				else cout << ".";
+		for (int i = 1; i <= h; i++) {
+			for (int j = 1; j <= w; j++) {
+				if (i % 2 == 1) {
+					j % 2 == 1 ? cout << "#" : cout << ".";
+				} else {
+					j % 2 == 1 ? cout << "." : cout << "#";
+				}
 			}
 			cout << endl;
 		}
