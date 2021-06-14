@@ -2,11 +2,11 @@
 using namespace std;
 
 int main() {
-	for (int i = 0; i < 10000; i++) {
-		int x;
-		cin >> x;
-		if (x == 0) return 0;
-		cout << "Case " << i+1 << ": " << x << endl;
+	for (int i = 0; i < 3000; i++) {
+		int x, y;
+		cin >> x >> y;
+		if (x == 0 && y == 0) return 0;
+		cout << min(x, y) << " " << max(x, y) << endl;
 	}
 	return 0;
 }
