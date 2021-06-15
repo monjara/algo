@@ -4,25 +4,31 @@
 using namespace std;
 
 int main() {
-	int r, c;
-	cin >> r >> c;
-	vector<vector<int>> a(r + 1, vector<int>(c + 1));
-	for (int i = 0; i < r; i++) {
-		for (int j = 0; j < c; j++) {
+	int n, m, l;
+	cin >> n >> m >> l;
+	vector<vector<int>> a(n, vector<int>(m));
+	vector<vector<int>> b(m, vector<int>(l));
+	vector<vector<int>> c(n, vector<int>(l));
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
 			cin >> a.at(i).at(j);
 		}
 	}
-	for (int i = 0; i < r; i++) {
-		a.at(i).at(c) = accumulate(a.at(i).begin(), a.at(i).end(), 0);
-	}
-	for (int i = 0; i < r; i++) {
-		for (int j = 0; j < c + 1; j++) {
-			a.at(r).at(j) += a.at(i).at(j);
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < l; j++) {
+			cin >> b.at(i).at(j);
 		}
 	}
-	for (int i = 0; i < r + 1; i++) {
-		for (int j = 0; j < c + 1; j++) {
-			cout << a.at(i).at(j) << " ";
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < l; j++) {
+			for (int k = 0; k < m; k++) {
+				c.at(i).at(j) += a.at(i).at(j) * b.at(j).at(k);
+			}
+		}
+	}
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < l; j++) {
+			cout << c.at(i).at(j) << " ";
 		}
 		cout << endl;
 	}
