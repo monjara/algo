@@ -2,11 +2,15 @@
 using namespace std;
 
 int main() {
-	string s;
-	getline(cin, s);
-	for (int i = 0; i < s.size(); i++) {
-		s[i] = isupper(s[i]) ? tolower(s[i]) : toupper(s[i]);
+	for (int i = 0; i < 1000001; i++) {
+		string s;
+		cin >> s;
+		if (s == "0") return 0;
+		int sum = 0;
+		for (int j = 0; j < s.size(); j++) {
+			sum += s[j] - '0';
+		}
+		cout << sum << endl;
 	}
-	cout << s << endl;
 	return 0;
 }
