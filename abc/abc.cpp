@@ -3,8 +3,16 @@
 using namespace std;
 
 int main() {
-	int a, b, c, d;
-	cin >> a >> b >> c >> d;
-	cout << b - c << endl;
+	string s;
+	cin >> s;
+	int count = 0;
+	for (int i = 0; i < s.size(); i++) {
+		if (s[i] == '.') break;
+		count++;
+	}
+	for (int i = 0; i < count; i++) {
+		cout << s[i];
+	}
+	cout << endl;
 	return 0;
 }
