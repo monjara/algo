@@ -3,9 +3,12 @@
 using namespace std;
 
 int main() {
-	int m, h;
-	cin >> m >> h;
-	if (h % m == 0) cout << "Yes" << endl;
-	else cout << "No" << endl;
+	int v, t, s, d;
+	cin >> v >> t >> s >> d;
+	if (v * t <= d && d <= v * s) {
+		cout << "No" << endl;
+	} else {
+		cout << "Yes" << endl;
+	}
 	return 0;
 }
