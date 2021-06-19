@@ -3,12 +3,13 @@
 using namespace std;
 
 int main() {
-	int v, t, s, d;
-	cin >> v >> t >> s >> d;
-	if (v * t <= d && d <= v * s) {
-		cout << "No" << endl;
-	} else {
-		cout << "Yes" << endl;
+	int n, x;
+	cin >> n >> x;
+	for (int i = 0; i < n; i++) {
+		int a;
+		cin >> a;
+		if (x != a) cout << a << " ";
 	}
+	cout << endl;
 	return 0;
 }
