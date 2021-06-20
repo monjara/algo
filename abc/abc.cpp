@@ -3,15 +3,9 @@
 using namespace std;
 
 int main() {
-	long long n, k;
-	cin >> n >> k;
-	for (int i = 0; i < k; i++) {
-		if (n % 200 == 0) {
-			n = n / 200;
-		} else {
-			n = n * 1000 + 200;
-		}
-	}
-	cout << n << endl;
+	int a, b, c;
+	cin >> a >> b >> c;
+	if (pow(a, 2) + pow(b, 2) < pow(c, 2)) cout << "Yes" << endl;
+	else cout << "No";
 	return 0;
 }
