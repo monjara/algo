@@ -3,8 +3,9 @@
 using namespace std;
 
 int main() {
-	char a, b, c;
-	cin >> a >> b >> c;
-	(a == b && b == c) ? cout << "Won" << endl : cout << "Lost" << endl;
+	int a, b;
+	cin >> a >> b;
+	int res = a * 2 + 100 - b;
+	cout << res << endl;
 	return 0;
 }
