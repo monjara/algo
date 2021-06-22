@@ -3,24 +3,14 @@
 using namespace std;
 
 int main() {
-	int n;
-	cin >> n;
-	vector<int> outs(n);
-	bool can = false;
-	int res = 1000000001;
-
-	for (int i = 0; i < n; i++) {
-		int a, p, x;
-		cin >> a >> p >> x;
-		if (x - a > 0) {
-			can = true;
-			outs.at(i) = p;
-		}
-	}
-	for (int i = 0; i < n; i++) {
-		if (outs.at(i) > 0) res = min(res, outs.at(i));
-	}
-	if (can) cout << res << endl;
-	else cout << -1 << endl;
+	int a, b;
+	cin >> a >> b;
+	int c = a + b;
+	int res;
+	if (c >= 15 && b >= 8) res = 1;
+	else if (c >= 10 && b >= 3) res = 2;
+	else if (c >= 3) res = 3;
+	else res = 4;
+	cout << res << endl;
 	return 0;
 }
