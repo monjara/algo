@@ -3,14 +3,20 @@
 using namespace std;
 
 int main() {
-	int a, b;
-	cin >> a >> b;
-	int c = a + b;
-	int res;
-	if (c >= 15 && b >= 8) res = 1;
-	else if (c >= 10 && b >= 3) res = 2;
-	else if (c >= 3) res = 3;
-	else res = 4;
+	int n;
+	cin >> n;
+	vector<int> a(n);
+	vector<int> b(n);
+	for (int i = 0; i < n; i++) {
+		cin >> a.at(i) >> b.at(i);
+	}
+
+	int res = 200000;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			res = min(res, i == j ? a.at(i) + b.at(j) :  max(a.at(i), b.at(j)));
+		}
+	}
 	cout << res << endl;
 	return 0;
 }
