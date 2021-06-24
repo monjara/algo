@@ -3,9 +3,12 @@
 using namespace std;
 
 int main() {
-	int a;
-	cin >> a;
-	int res = a + pow(a, 2) + pow(a, 3);
-	cout << res << endl;
+	string s, t;
+	cin >> s >> t;
+	int count = 0;
+	for (int i = 0; i < s.size(); i++) {
+		if (s[i] != t[i]) count++;
+	}
+	cout << count << endl;
 	return 0;
 }
