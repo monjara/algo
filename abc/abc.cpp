@@ -5,13 +5,15 @@ using namespace std;
 int main() {
 	int n;
 	cin >> n;
-	int money = 0;
-	int i = 1; 
-	while (1) {
-		money += i;
-		if (money >= n) break;
-		i++;
+	vector<int> a(n);
+	for (int i = 0; i < n; i++) cin >> a.at(i);
+
+	map<int, int> cnt;
+	long long ans = 0;
+	for (int j = 0; j < n; j++) {
+		ans += j - cnt[a.at(j)];
+		cnt[a.at(j)]++;
 	}
-	cout << i << endl;
+	cout << ans << endl;
 	return 0;
 }
