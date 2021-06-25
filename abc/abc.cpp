@@ -3,19 +3,14 @@
 using namespace std;
 
 int main() {
-	int k;
-	cin >> k;
-	int a[1000001];
-	a[1] = 7 % k;
-	for (int i = 2; i <= k; i++) {
-		a[i] = (a[i - 1] * 10 + 7) % k;
-	}
-	for (int i = 1; i <= k; i++) {
-		if (a[i] == 0) {
-			cout << i << endl;
-	        return 0;
-		}
-	}
-	cout << "-1" << endl;
+	string s;
+	cin >> s;
+	int res;
+	if (s[0] == 'R' && s[1] == 'R' && s[2] == 'R') res = 3;
+	else if (s[0] == 'R' && s[1] == 'R') res = 2;
+	else if (s[1] == 'R' && s[2] == 'R') res = 2;
+	else if (s[0] == 'R' || s[1] == 'R' || s[2] == 'R') res = 1;
+	else res = 0;
+	cout << res << endl;
 	return 0;
 }
