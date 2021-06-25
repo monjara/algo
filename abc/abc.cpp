@@ -3,9 +3,10 @@
 using namespace std;
 
 int main() {
-	int n, x, t;
-	cin >> n >> x >> t;
-	int res = n % x == 0 ? n / x * t : (n / x + 1) * t;
-	cout << res << endl;
+	string n;
+	cin >> n;
+	int sum = 0;
+	for (int i = 0; i < n.size(); i++) sum += n[i] - '0';
+	sum % 9 == 0 ? cout << "Yes" << endl : cout << "No" << endl;
 	return 0;
 }
