@@ -3,12 +3,11 @@
 using namespace std;
 
 int main() {
-	string s, t;
-	cin >> s >> t;
-	int count = 0;
-	for (int i = 0; i < s.size(); i++) {
-		if (s[i] != t[i]) count++;
-	}
-	cout << count << endl;
+	int n;
+	cin >> n;
+	int res = n * 1.08;
+	if (res < 206) cout << "Yay!" << endl;
+	else if (res == 206) cout << "so-so" << endl;
+	else cout << ":(" << endl;
 	return 0;
 }
