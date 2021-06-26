@@ -3,8 +3,16 @@
 using namespace std;
 
 int main() {
-	double d, t, s;
-	cin >> d >> t >> s;
-	d / s <= t ? cout << "Yes" << endl : cout << "No" << endl;
+	string s, t;
+	cin >> s >> t;
+	int ans = t.size();
+	for (int i = 0; i < s.size() - t.size(); i++) {
+		int diff = 0;
+		for (int j = 0; j < t.size(); j++) {
+			if (t[j] != s[i + j]) diff++;
+		}
+		ans = min(ans, diff);
+	}
+	cout << ans << endl;
 	return 0;
 }
