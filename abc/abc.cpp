@@ -3,8 +3,9 @@
 using namespace std;
 
 int main() {
-	int x;
-	cin >> x;
-	x == 0 ? cout << 1 << endl : cout << 0 << endl;
+	long long a, b, c, d;
+	cin >> a >> b >> c >> d;
+	long long res = max(max(max(a * c, b * d), a * d), b * c);
+	cout << res << endl;
 	return 0;
 }
