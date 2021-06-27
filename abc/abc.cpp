@@ -3,15 +3,18 @@ using namespace std;
 using ll = long long;
  
 int main(){
-	ll n;
+	int n;
 	cin >> n;
-	vector<ll> a(n);
-	for (int i = 0; i < n; i++) cin >> a.at(i);
-	sort(a.begin(), a.end());
-	bool exist = false;
-	for (int i = 0; i < n - 1; i++) {
-		if (a.at(i) == a.at(i + 1)) exist = true;
+	bool possible = true;
+	for (int i = 0; i < n; i++) {
+		int a;
+		cin >> a;
+		if (a % 2 == 0) {
+			if (a % 3 != 0 && a % 5 != 0) {
+				possible = false;
+			}
+		}
 	}
-	exist ? cout << "NO" << endl : cout << "YES" << endl;
+	possible ? cout << "APPROVED" << endl : cout << "DENIED" << endl;
     return 0;
 }
