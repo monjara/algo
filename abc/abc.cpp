@@ -1,20 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
  
 int main(){
 	int n;
 	cin >> n;
-	map<int, int> cnt;
+	ll ans = 0;
 	for (int i = 1; i <= n; i++) {
-		cnt[i] = 0;
+		if (i % 3 != 0 && i % 5 != 0) {
+			ans += i;
+		}
 	}
-	for (int i = 0; i < n - 1; i++) {
-		int tmp;
-		cin >> tmp;
-		cnt[tmp]++;
-	}
-	for (auto i : cnt) {
-		cout << i.second << endl;
-	}
+	cout << ans << endl;
     return 0;
 }
