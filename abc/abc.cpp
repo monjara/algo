@@ -3,14 +3,15 @@ using namespace std;
 using ll = long long;
  
 int main(){
-	int x, y;
-	cin >> x >> y;
-	bool exist = false;
-	for (int i = 0; i <= x; i++) {
-		for (int j = x - i; j >= 0; j--) {
-			if (i + j == x && 2 * i + 4 * j == y) exist = true;
-		}
+	ll h, n;
+	cin >> h >> n;
+	vector<int> a(n);
+	for (int i = 0; i < n; i++) {
+		int a;
+		cin >> a;
+		h -= a;
 	}
-	exist ? cout << "Yes" << endl : cout << "No" << endl;
+	if (h > 0) cout << "No" << endl;
+	else cout << "Yes" << endl;
     return 0;
 }
