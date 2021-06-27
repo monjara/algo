@@ -1,23 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
  
 int main(){
-	int n, k;
-	cin >> n >> k;
-	vector<int> N(n, 0);
-	for (int i = 0; i < k; i++) {
-		int d;
-		cin >> d;
-		for (int j = 0; j < d; j++) {
-			int a;
-			cin >> a;
-			N.at(a - 1)++;
-		}
+	ll a, b, c, k;
+	cin >> a >> b >> c >> k;
+	ll ans = 0;
+	if (a + b >= k) {
+		ans = min(a, k);
+	} else {
+		ll tmp = k - (a + b);
+		ans = a - tmp;
 	}
-	int cnt = 0;
-	for (int i : N) {
-		if (i == 0) cnt++;
-	}
-	cout << cnt << endl;
+	cout << ans << endl;
     return 0;
 }
