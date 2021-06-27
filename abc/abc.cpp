@@ -5,16 +5,18 @@ using ll = long long;
 int main(){
 	int n;
 	cin >> n;
-	bool possible = true;
+	map<string, int> cnt;
 	for (int i = 0; i < n; i++) {
-		int a;
-		cin >> a;
-		if (a % 2 == 0) {
-			if (a % 3 != 0 && a % 5 != 0) {
-				possible = false;
-			}
-		}
+		string s;
+		cin >> s;
+		cnt[s]++;
 	}
-	possible ? cout << "APPROVED" << endl : cout << "DENIED" << endl;
+	int ma = -1;
+	for (auto i : cnt) {
+		ma = max(ma, i.second);
+	}
+	for (auto i : cnt) {
+		if (i.second == ma) cout << i.first << endl;
+	}
     return 0;
 }
