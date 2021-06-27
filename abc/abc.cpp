@@ -1,12 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
  
 int main(){
-	string s;
-	cin >> s;
-	for (int i = 0; i < s.size(); i++) {
-		cout << "x";
+	ll n;
+	cin >> n;
+	vector<ll> a(n);
+	for (int i = 0; i < n; i++) cin >> a.at(i);
+	sort(a.begin(), a.end());
+	bool exist = false;
+	for (int i = 0; i < n - 1; i++) {
+		if (a.at(i) == a.at(i + 1)) exist = true;
 	}
-	cout << endl;
+	exist ? cout << "NO" << endl : cout << "YES" << endl;
     return 0;
 }
