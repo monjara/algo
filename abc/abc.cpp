@@ -1,22 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
  
 int main(){
-	int n;
-	cin >> n;
-	map<string, int> cnt;
-	for (int i = 0; i < n; i++) {
-		string s;
-		cin >> s;
-		cnt[s]++;
+	int n, k;
+	cin >> n >> k;
+	int res = 0;
+	while (n >= 1) {
+		n /= k;
+		res++;
 	}
-	int ma = -1;
-	for (auto i : cnt) {
-		ma = max(ma, i.second);
-	}
-	for (auto i : cnt) {
-		if (i.second == ma) cout << i.first << endl;
-	}
+	cout << res << endl;
     return 0;
 }
