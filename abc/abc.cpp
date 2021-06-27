@@ -1,17 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
  
 int main(){
-	ll a, b, c, k;
-	cin >> a >> b >> c >> k;
-	ll ans = 0;
-	if (a + b >= k) {
-		ans = min(a, k);
+	int k;
+	string s;
+	cin >> k >> s;
+	if (s.size() <= k) {
+		cout << s << endl;
 	} else {
-		ll tmp = k - (a + b);
-		ans = a - tmp;
+		for (int i = 0; i < k; i++) {
+			if (i == k - 1) cout << s[i] << "..." << endl;
+			else cout << s[i];
+		}
 	}
-	cout << ans << endl;
     return 0;
 }
