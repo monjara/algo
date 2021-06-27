@@ -1,18 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
  
 int main(){
-	int a, b, c, d;
-	cin >> a >> b >> c >> d;
+	ll x;
+	cin >> x;
+	ll money = 100;
+	ll i = 0; 
 	while (1) {
-		c -= b;
-		if (c <= 0) {
-			cout << "Yes" << endl;
-			return 0;
-		}
-		a -= d;
-		if (a <= 0) {
-			cout << "No" << endl;
+		money = money + money / 100;
+		i++;
+		if (money >= x) {
+			cout << i << endl;
 			return 0;
 		}
 	}
