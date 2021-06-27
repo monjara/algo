@@ -2,14 +2,19 @@
 using namespace std;
  
 int main(){
-	int n, m;
-	cin >> n >> m;
-	for (int i = 0; i < m; i++) {
-		int a;
-		cin >> a;
-		n -= a;
+	int n;
+	cin >> n;
+	map<int, int> cnt;
+	for (int i = 1; i <= n; i++) {
+		cnt[i] = 0;
 	}
-	if (n >= 0) cout << n << endl;
-	else cout << -1 << endl;
+	for (int i = 0; i < n - 1; i++) {
+		int tmp;
+		cin >> tmp;
+		cnt[tmp]++;
+	}
+	for (auto i : cnt) {
+		cout << i.second << endl;
+	}
     return 0;
 }
