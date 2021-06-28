@@ -3,19 +3,12 @@ using namespace std;
 using ll = long long;
 
 int main(){
-	int n, m;
-	cin >> n >> m;
-	vector<int> a(n);
-	int sum = 0;
-	for (int i = 0; i < n; i++) {
-		cin >> a.at(i);
-		sum += a.at(i);
-	}
-	int cnt = 0;
-	for (int i = 0; i < n; i++) {
-		if (a.at(i) * 4 * m >= sum) cnt++;
-	}
-	if (cnt >= m) cout << "Yes" << endl;
-	else cout << "No" << endl;
+	int n;
+	cin >> n;
+	int res = 0;
+	res += 1000 * (n / 500);
+	n %= 500;
+	res += 5 * (n / 5);
+	cout << res << endl;
     return 0;
 }
