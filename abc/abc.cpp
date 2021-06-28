@@ -4,18 +4,17 @@ using namespace std;
 typedef long long ll;
 
 int main(){
-	int n;
-	cin >> n;
-	vector<int> p(n), q(n);
-	rep(i, n) cin >> p[i];
-	rep(i, n) cin >> q[i];
-	vector<int> v(n);
-	rep(i, n) v[i] = i + 1;
-	map<vector<int>, int> mp;
-	do {
-		mp[v] = mp.size();
-	} while (next_permutation(v.begin(), v.end()));
-	int ans = abs(mp[p] - mp[q]);
-	cout << ans << endl;
+	int n, k, m;
+	cin >> n >> k >> m;
+	int sum = 0;
+	rep(i, n-1) {
+		int a;
+		cin >> a;
+		sum += a;
+	}
+	int ans = n * m - sum;
+	if (ans > k) cout << -1 << endl;
+	else if (ans < 0) cout << 0 << endl;
+	else cout << ans << endl;
     return 0;
 }
