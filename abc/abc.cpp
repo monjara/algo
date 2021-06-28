@@ -2,17 +2,13 @@
 using namespace std;
 
 int main(){
-	int a, b;
-	cin >> a >> b;
-
-	for (int i = 1; i <= 10000; i++) {
-		int za = i * 8 / 100;
-		int zb = i * 10 / 100;
-		if (za == a && zb == b) {
-			cout << i << endl;
-			return 0;
-		}
+	int n;
+	string s;
+	cin >> n >> s;
+	int cnt = 0;
+	for (int i = 0; i < n - 2; i++) {
+		if (s[i] == 'A' && s[i + 1] == 'B' && s[i + 2] == 'C') cnt++;
 	}
-	cout << -1 << endl;
+	cout << cnt << endl;
     return 0;
 }
