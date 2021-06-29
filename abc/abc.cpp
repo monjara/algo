@@ -4,15 +4,14 @@ using namespace std;
 typedef long long ll;
 
 int main(){
-	int n;
+	ll n;
 	cin >> n;
-	bool ok = false;
-	for (int i = 1; i <= 9; i++) {
-		for (int j = 1; j <= 9; j++) {
-			if (i * j == n) ok = true;
+	ll ans = 1000000000003;
+	for (int i = 1; i < 1000002; i++) {
+		if (n % i == 0) {
+			ans = min(ans, i + n / i - 2);
 		}
 	}
-	if (ok) cout << "Yes" << endl;
-	else cout << "No" << endl;
+	cout << ans << endl;
     return 0;
 }
