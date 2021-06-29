@@ -4,17 +4,15 @@ using namespace std;
 typedef long long ll;
 
 int main(){
-	int n, k, m;
-	cin >> n >> k >> m;
-	int sum = 0;
-	rep(i, n-1) {
-		int a;
-		cin >> a;
-		sum += a;
+	int n;
+	cin >> n;
+	bool ok = false;
+	for (int i = 1; i <= 9; i++) {
+		for (int j = 1; j <= 9; j++) {
+			if (i * j == n) ok = true;
+		}
 	}
-	int ans = n * m - sum;
-	if (ans > k) cout << -1 << endl;
-	else if (ans < 0) cout << 0 << endl;
-	else cout << ans << endl;
+	if (ok) cout << "Yes" << endl;
+	else cout << "No" << endl;
     return 0;
 }
