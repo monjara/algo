@@ -4,14 +4,11 @@ using namespace std;
 typedef long long ll;
 
 int main(){
-	ll n;
-	cin >> n;
-	ll ans = 1000000000003;
-	for (int i = 1; i < 1000002; i++) {
-		if (n % i == 0) {
-			ans = min(ans, i + n / i - 2);
-		}
-	}
-	cout << ans << endl;
+	int n;
+	string s;
+	cin >> n >> s;
+	string t = s.substr(0, n / 2) + s.substr(0, n / 2);
+	if (s.compare(t) == 0) cout << "Yes" << endl;
+	else cout << "No" << endl;
     return 0;
 }
