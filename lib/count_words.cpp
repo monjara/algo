@@ -11,8 +11,8 @@ int find(string s, const string& word) {
 }
 
 int main() {
-	string s;
-	cin >> s;
+	// sample
+	string s = "ZONeasdfasdfZoneZONe";
 	int count = find(s, "ZONe");
 	cout << count << endl;
 	return 0;
