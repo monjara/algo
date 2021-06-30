@@ -5,13 +5,15 @@ typedef long long ll;
 
 int main(){
 	int n;
-	string s;
-	cin >> n >> s;
-	for (char ch : s) {
-		int x = ch - 'A';
-		x = (x + n) % 26;
-		printf("%c", char(x + 'A'));
+	cin >> n;
+	vector<int> d(n);
+	rep(i, n) cin >> d.at(i);
+	int res = 0;
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = i + 1; j < n; j++) {
+			res += d.at(i) * d.at(j);
+		}
 	}
-	cout << endl;
+	cout << res << endl;
     return 0;
 }
