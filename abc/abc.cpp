@@ -7,8 +7,11 @@ int main(){
 	int n;
 	string s;
 	cin >> n >> s;
-	string t = s.substr(0, n / 2) + s.substr(0, n / 2);
-	if (s.compare(t) == 0) cout << "Yes" << endl;
-	else cout << "No" << endl;
+	for (char ch : s) {
+		int x = ch - 'A';
+		x = (x + n) % 26;
+		printf("%c", char(x + 'A'));
+	}
+	cout << endl;
     return 0;
 }
