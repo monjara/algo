@@ -4,21 +4,18 @@ using namespace std;
 typedef long long ll;
 
 int main(){
-	int n;
 	string s;
-	cin >> n >> s;
-	vector<int> vec(n);
-	int i = 0;
-	for (char ch : s) {
-		int x = ch - 'a';
-		vec.at(i) = x;
-		i++;
+	cin >> s;
+	bool ok = true;
+	rep(i, s.size()) {
+		if (i % 2 == 0) {
+			if (s[i] == 'L') ok = false;
+		}
+		else {
+			if (s[i] == 'R') ok = false;
+		}
 	}
-	int cnt = 0;
-	for (int j = 0; j < n - 1; j++) {
-		if (vec.at(j) != vec.at(j + 1)) cnt++;
-	}
-	cnt++;
-	cout << cnt << endl;
+	if (ok) cout << "Yes" << endl;
+	else cout << "No" << endl;
     return 0;
 }
