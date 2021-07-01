@@ -4,21 +4,14 @@ using namespace std;
 typedef long long ll;
 
 int main(){
-	int n, k, q;
-	cin >> n >> k >> q;
-	map<int, int> cnt;
+	int n, k;
+	cin >> n >> k;
+	int cnt = 0;
 	rep(i, n) {
-		cnt[i + 1] = k;
+		int h;
+		cin >> h;
+		if (h >= k) cnt++;
 	}
-	rep(i, q) {
-		int a;
-		cin >> a;
-		cnt[a]++;
-	}
-	rep(i, n) {
-		cnt[i + 1] -= q;
-		if (cnt[i + 1] > 0) cout << "Yes" << endl;
-		else cout << "No" << endl;
-	}
+	cout << cnt << endl;
     return 0;
 }
