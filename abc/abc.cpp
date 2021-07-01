@@ -4,14 +4,17 @@ using namespace std;
 typedef long long ll;
 
 int main(){
-	int n, k;
-	cin >> n >> k;
-	int cnt = 0;
-	rep(i, n) {
-		int h;
-		cin >> h;
-		if (h >= k) cnt++;
+	int n;
+	cin >> n;
+	map<int, int> cnt;
+	for (int i = 1; i <= n; i++) {
+		int a;
+		cin >> a;
+		cnt[a] = i;
 	}
-	cout << cnt << endl;
+	for (int i = 1; i <= n; i++) {
+		if (i == n) cout << cnt[i] << endl;
+		else cout << cnt[i] << " ";
+	}
     return 0;
 }
