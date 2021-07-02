@@ -4,12 +4,9 @@ using namespace std;
 typedef long long ll;
 
 int main(){
-	int n;
-	string s, t;
-	cin >> n >> s >> t;
-	rep(i, n) {
-		cout << s[i] << t[i];
-	}
-	cout << endl;
+    ll a, b;
+    cin >> a >> b;
+    ll res = lcm(a, b);
+    cout << res << endl;
     return 0;
 }
