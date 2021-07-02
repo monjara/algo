@@ -17,15 +17,13 @@ template<class T> inline bool chmax(T& a, T b) {
     return false;
 }
 
-const long long INF = 1LL << 60;
 
 int main() {
 	// https://atcoder.jp/contests/dp/tasks/dp_a
-	int n, h[100010];
+	int n, h[100010], dp[100010];
+	long long INF = 1LL << 60;
 	cin >> n;
 	for (int i = 0; i < n; i++) cin >> h[i];
-
-	long long dp[100010];
 	for (int i = 0; i < 100010; i++) dp[i] = INF;
 
 	dp[0] = 0;
