@@ -12,16 +12,15 @@ template<class T> inline bool chmin(T& a, T b) {
 }
 
 int main(){
-    ll n, a[100002], dp[100002];
-    ll INF = 1LL << 60;
+    ll n, h[100003], dp[100003];
+	ll INF = 1LL << 60;
     cin >> n;
-    rep(i, n) cin >> a[i];
-    rep(i, 100002) dp[i] = INF;
-
+    rep(i, n) cin >> h[i];
+    rep(i, 100003) dp[i] = INF;
     dp[0] = 0;
     rep(i, n) {
-        chmin(dp[i + 1], dp[i] + abs(a[i] - a[i + 1]));
-        chmin(dp[i + 2], dp[i] + abs(a[i] - a[i + 2]));
+        chmin(dp[i + 1], dp[i] + abs(h[i] - h[i + 1]));
+        chmin(dp[i + 2], dp[i] + abs(h[i] - h[i + 2]));
     }
     cout << dp[n - 1] << endl;
     return 0;
