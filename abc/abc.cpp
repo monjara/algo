@@ -4,12 +4,12 @@ using namespace std;
 typedef long long ll;
 
 int main(){
-	string s;
-	cin >> s;
-	int cnt = 0;
-	rep(i, s.size() / 2) {
-		if (s[i] != s[s.size() - i - 1]) cnt++;
+	int n;
+	string s, t;
+	cin >> n >> s >> t;
+	rep(i, n) {
+		cout << s[i] << t[i];
 	}
-	cout << cnt << endl;
+	cout << endl;
     return 0;
 }
