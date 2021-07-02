@@ -4,9 +4,9 @@ using namespace std;
 typedef long long ll;
 
 int main(){
-    ll a, b;
-    cin >> a >> b;
-    ll res = lcm(a, b);
-    cout << res << endl;
+    int m_1, d_1, m_2, d_2;
+    cin >> m_1 >> d_1 >> m_2 >> d_2;
+    if (d_2 == 1) cout << 1 << endl;
+    else cout << 0 << endl;
     return 0;
 }
