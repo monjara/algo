@@ -4,26 +4,30 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true
 template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true; } return false; }
 typedef long long ll;
 
-int factorial(int x) {
-    int sum = 1;
-    for (int i = 1; i <= x; i++) {
-        sum *= i;
-    }
-    return sum;
-}
-
 int main(){
-    ll p;
-    cin >> p;
-    ll cnt = 0;
-    for (int i = 10; i > 0; i--) {
-        if (p / factorial(i) < 1) continue;
-        else {
-            p -= factorial(i);
-            cnt++;
-            i++;
+    ll n, k;
+    cin >> n >> k;
+    map<ll, ll> cnt;
+    vector<ll> peopleNum(n);
+    vector<ll> mapOrder(n);
+    for (ll i = 0; i < n; i++) {
+        ll num;
+        cin >> num;
+        cnt[num] = k / n;
+        peopleNum.at(i) = num;
+        mapOrder.at(i) = num;
+    }
+    k %= n;
+    sort(peopleNum.begin(), peopleNum.end());
+    while (k > 0) {
+        for (ll i = 0; i < n; i++) {
+            if (k < 1) break;
+            cnt[peopleNum.at(i)]++;
+            k--;
         }
     }
-    cout << cnt << endl;
+    for (int i = 0; i < n; i++) {
+        cout << cnt[mapOrder.at(i)] << endl;
+    }
     return 0;
 }
