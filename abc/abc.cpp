@@ -4,10 +4,26 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true
 template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true; } return false; }
 typedef long long ll;
 
+int factorial(int x) {
+    int sum = 1;
+    for (int i = 1; i <= x; i++) {
+        sum *= i;
+    }
+    return sum;
+}
+
 int main(){
-    int a, b;
-    cin >> a >> b;
-    if (a * 6 >= b && a * 1 <= b) cout << "Yes" << endl;
-    else cout << "No" << endl;
+    ll p;
+    cin >> p;
+    ll cnt = 0;
+    for (int i = 10; i > 0; i--) {
+        if (p / factorial(i) < 1) continue;
+        else {
+            p -= factorial(i);
+            cnt++;
+            i++;
+        }
+    }
+    cout << cnt << endl;
     return 0;
 }
