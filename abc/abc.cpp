@@ -7,15 +7,23 @@ typedef long long ll;
 int main(){
     int n;
     cin >> n;
-    int idx = 1;
-    int cnt = 0;
+    vector<ll> a(n + 1);
+    vector<ll> b(n);
+    for (int i = 0; i < n + 1; i++) cin >> a.at(i);
+    for (int i = 0; i < n; i++) cin >> b.at(i);
+
+    ll ans = 0;
     for (int i = 0; i < n; i++) {
-        int p;
-        cin >> p;
-        if (idx != p) cnt++;
-        idx++;
+        ll current = min(a.at(i), b.at(i));
+        a.at(i) -= current;
+        b.at(i) -= current;
+        ans += current;
+
+        ll next = min(a.at(i + 1), b.at(i));
+        a.at(i + 1) -= next;
+        b.at(i) -= next;
+        ans += next;
     }
-    if (cnt > 2) cout << "NO" << endl;
-    else cout << "YES" << endl;
+    cout << ans << endl;
     return 0;
 }
