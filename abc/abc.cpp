@@ -5,9 +5,10 @@ template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true
 typedef long long ll;
 
 int main() {
-    int n;
-    cin >> n;
-    int ans = n * n * n;
-    cout << ans << endl;
+    int a;
+    string s;
+    cin >> a >> s;
+    if (a >= 3200) cout << s << endl;
+    else cout << "red" << endl;
     return 0;
 }
