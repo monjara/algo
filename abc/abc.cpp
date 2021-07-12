@@ -7,13 +7,16 @@ typedef long long ll;
 int main() {
     int n;
     cin >> n;
+    vector<double> v(n);
+    for (int i = 0; i < n; i++) cin >> v.at(i);
+    sort(v.begin(), v.end());
     double ans = 0;
-    for (int i = 0; i < n; i++) {
-        double a;
-        cin >> a;
-        ans += 1 / a;
+    for (int i = 0; i < n - 1; i++) {
+        ans = (v.at(i) + v.at(i + 1)) / 2.0;
+        if (i < n - 1) {
+            v.at(i + 1) = (v.at(i) + v.at(i + 1)) / 2;
+        }
     }
-    ans = 1 / ans;
     cout << fixed << setprecision(15) << ans << endl;
     return 0;
 }
