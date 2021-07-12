@@ -5,10 +5,15 @@ template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true
 typedef long long ll;
 
 int main() {
-    int a;
-    string s;
-    cin >> a >> s;
-    if (a >= 3200) cout << s << endl;
-    else cout << "red" << endl;
+    int n;
+    cin >> n;
+    double ans = 0;
+    for (int i = 0; i < n; i++) {
+        double a;
+        cin >> a;
+        ans += 1 / a;
+    }
+    ans = 1 / ans;
+    cout << fixed << setprecision(15) << ans << endl;
     return 0;
 }
