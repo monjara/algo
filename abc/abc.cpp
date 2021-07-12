@@ -5,13 +5,16 @@ template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true
 typedef long long ll;
 
 int main() {
-    int n;
-    cin >> n;
-    vector<int> p(n);
-    for (int i = 0; i < n; i++) cin >> p.at(i);
-    sort(p.begin(), p.end());
-    p.at(n - 1) = p.at(n - 1) / 2;
-    int ans = accumulate(p.begin(), p.end(), 0);
+    int n, k;
+    cin >> n >> k;
+    vector<ll> h(n);
+    for (int i = 0; i < n; i++) cin >> h.at(i);
+    sort(h.begin(), h.end());
+    ll ans = 1100000000;
+    for (int i = 0; i < n - k + 1; i++) {
+        ll tmp = i + k - 1;
+        ans = min(ans, h.at(tmp) - h.at(i));
+    }
     cout << ans << endl;
     return 0;
 }
