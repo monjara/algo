@@ -5,11 +5,13 @@ template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true
 typedef long long ll;
 
 int main() {
-    int d;
-    cin >> d;
-    if (d == 22) cout << "Christmas Eve Eve Eve" << endl;
-    else if (d == 23) cout << "Christmas Eve Eve" << endl;
-    else if (d == 24) cout << "Christmas Eve" << endl;
-    else if (d == 25) cout << "Christmas" << endl;
+    int n;
+    cin >> n;
+    vector<int> p(n);
+    for (int i = 0; i < n; i++) cin >> p.at(i);
+    sort(p.begin(), p.end());
+    p.at(n - 1) = p.at(n - 1) / 2;
+    int ans = accumulate(p.begin(), p.end(), 0);
+    cout << ans << endl;
     return 0;
 }
