@@ -5,11 +5,22 @@ template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true
 typedef long long ll;
 
 int main() {
-    int a, b;
-    cin >> a >> b;
-    if (b % a == 0) {
-        cout << a + b << endl;
+    int n, m;
+    cin >> n >> m;
+    map<int, int> ans;
+    for (int i = 0; i < n; i++) {
+        int k;
+        cin >> k;
+        for (int j = 0; j < k; j++) {
+            int a;
+            cin >> a;
+            ans[a]++;
+        }
     }
-    else cout << b - a << endl;
+    int cnt = 0;
+    for (auto x : ans) {
+        if (x.second == n) cnt++;
+    }
+    cout << cnt << endl;
     return 0;
 }
