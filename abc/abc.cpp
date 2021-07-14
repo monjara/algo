@@ -5,17 +5,27 @@ template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true
 typedef long long ll;
 
 int main() {
-    ll n, a, b, c;
-    cin >> n >> a >> b >> c;
-    ll ans = 9999;
-    for (ll i = 0; i < 10000; i++) {
-        for (ll j = 0; j < 10000; j++) {
-            ll tmp = a * i + b * j;
-            if ((n - tmp) % c == 0 && tmp <= n) {
-                chmin(ans, i + j + (n - tmp) / c);
-            }
+    int h, w;
+    cin >> h >> w;
+    vector<vector<int>> a(h, vector<int>(w));
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++) {
+            cin >> a.at(i).at(j);
         }
     }
-    cout << ans << endl;
+    vector<int> rowSum(h), columnSum(w);
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++) {
+            rowSum.at(i) += a.at(i).at(j);
+            columnSum.at(j) += a.at(i).at(j);
+        }
+    }
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++) {
+            int ans = rowSum.at(i) + columnSum.at(j) - a.at(i).at(j);
+            if (j == w - 1) cout << ans << endl;
+            else cout << ans << " ";
+        }
+    }
     return 0;
 }
