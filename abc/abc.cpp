@@ -5,20 +5,17 @@ template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true
 typedef long long ll;
 
 int main() {
-    int n, m;
-    cin >> n >> m;
-    set<int> ans;
-    for (int i = 0; i < n + m; i++) {
-        int tmp;
-        cin >> tmp;
-        auto result = ans.insert(tmp);
-        if (!result.second) {
-            ans.erase(result.first);
+    ll n, a, b, c;
+    cin >> n >> a >> b >> c;
+    ll ans = 9999;
+    for (ll i = 0; i < 10000; i++) {
+        for (ll j = 0; j < 10000; j++) {
+            ll tmp = a * i + b * j;
+            if ((n - tmp) % c == 0 && tmp <= n) {
+                chmin(ans, i + j + (n - tmp) / c);
+            }
         }
     }
-    for (auto x : ans) {
-        cout << x << " ";
-    }
-    cout << endl;
+    cout << ans << endl;
     return 0;
 }
