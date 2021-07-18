@@ -7,18 +7,12 @@ typedef long long ll;
 int main() {
     ll a, b, k;
     cin >> a >> b >> k;
-    if (a <= k) {
-        k -= a;
-        a = 0;
-    }
-    else {
-        a -= k;
-        k = 0;
-    }
-
-    if (b <= k) b = 0;
-    else b -= k;
-
+    ll eat = min(a, k);
+    a -= eat;
+    k -= eat;
+    eat = min(b, k);
+    b -= eat;
+    k -= eat;
     cout << a << " " << b << endl;
     return 0;
 }
