@@ -1,5 +1,1 @@
-count_words
-dp
-factorial
-judgePrime
-run_length
+executables/*
