@@ -5,17 +5,19 @@ template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true
 typedef long long ll;
  
 int main() {
-    int n;
-    string s;
-    cin >> n >> s;
-    for (int i = 0; i < n; i++) {
-        if (s[i] == '1') {
-            if (i % 2 == 0) {
-                cout << "Takahashi" << endl;
-            }
-            else cout << "Aoki" << endl;
-            break;
-        }
+    int n, k;
+    cin >> n >> k;
+    vector<int> c(n);
+    for(int i = 0; i < n; i++) cin >> c.at(i);
+    map<int, int> cnt;
+    for (int i = 0; i < k; i++) cnt[c.at(i)]++;
+    int size = cnt.size();
+    for (int i = k; i < n; i++) {
+        cnt[c.at(i)]++;
+        cnt[c.at(i - k)]--;
+        if (cnt[c.at(i - k)] == 0) cnt.erase(c.at(i - k));
+        chmax(size, (int)cnt.size());
     }
+    cout << size << endl;
     return 0;
 }
