@@ -3,16 +3,27 @@ using namespace std;
 template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true; } return false; }
 template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true; } return false; }
 typedef long long ll;
- 
+
+bool isPrime(int num) {
+    if (num < 2) return false;
+    else if (num == 2) return true;
+    else if (num % 2 == 0) return false;
+    else {
+        double sqrtNum = sqrt(num);
+        for (int i = 3; i <= sqrtNum; i += 2) {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
+}
+
 int main() {
-    ll a, b, k;
-    cin >> a >> b >> k;
-    ll eat = min(a, k);
-    a -= eat;
-    k -= eat;
-    eat = min(b, k);
-    b -= eat;
-    k -= eat;
-    cout << a << " " << b << endl;
+    int x;
+    cin >> x;
+    while (true) {
+        if (isPrime(x)) break;
+        x++;
+    }
+    cout << x << endl;
     return 0;
 }
