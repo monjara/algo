@@ -5,13 +5,13 @@ template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true
 typedef long long ll;
 
 int main() {
-    map<string, int> cnt;
-    for (int i = 0; i < 4; i++) {
-        string s;
-        cin >> s;
-        cnt[s]++;
+    string s;
+    cin >> s;
+    bool ok = true;
+    for (int i = 0; i < 3; i++) {
+        if (s[i] == s[i + 1]) ok = false;
     }
-    if (cnt.size() == 4) cout << "Yes" << endl;
-    else cout << "No" << endl;
+    if (ok) cout << "Good" << endl;
+    else cout << "Bad" << endl;
     return 0;
 }
