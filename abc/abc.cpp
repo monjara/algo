@@ -5,11 +5,19 @@ template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true
 typedef long long ll;
 
 int main() {
-    char b;
-    cin >> b;
-    if (b == 'A') cout << 'T' << endl;
-    if (b == 'T') cout << 'A' << endl;
-    if (b == 'C') cout << 'G' << endl;
-    if (b == 'G') cout << 'C' << endl;
+    string s;
+    cin >> s;
+    int ans = 0;
+    int tmp = 0;
+    for (int i = 0; i < s.length(); i++) {
+        if (s[i] != 'A' && s[i] != 'T' && s[i] != 'G' && s[i] != 'C') {
+            tmp = 0;
+        }
+        else {
+            tmp++;
+            chmax(ans, tmp);
+        }
+    }
+    cout << ans << endl;
     return 0;
 }
