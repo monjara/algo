@@ -6,6 +6,7 @@ typedef long long ll;
 
 int main() {
 	int x = 1;
+
 	cout << x << endl;
     return 0;
 }
