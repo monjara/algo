@@ -1,3 +1,5 @@
-a, b = map(int, input().split())
-c = (a - b) / 3 + b
-print(c)
+s = {input() for i in range(4)}
+if len(s) == 4:
+	print("Yes")
+else:
+	print("No")
