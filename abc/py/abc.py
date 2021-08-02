@@ -1,5 +1,6 @@
-s = {input() for i in range(4)}
-if len(s) == 4:
-	print("Yes")
+n, a, x, y = map(int, input().split())
+if n > a:
+	ans = x * a + y * (n - a)
 else:
-	print("No")
+	ans = x * n
+print(ans)
