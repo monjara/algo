@@ -5,10 +5,12 @@ template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true
 typedef long long ll;
 
 int main() {
-	int n;
-	string s;
-	cin >> n >> s;
-	if (s[n - 1] == 'o') cout << "Yes" << endl;
-	else cout << "No" << endl;
+	char alfabet[26] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+	for (int i = 0; i < 26; ++i) {
+		int tmp;
+		cin >> tmp;
+		cout << alfabet[tmp - 1];
+	}
+	cout << endl;
     return 0;
 }
