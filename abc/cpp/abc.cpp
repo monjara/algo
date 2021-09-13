@@ -6,15 +6,9 @@ typedef long long ll;
 
 int main() {
 	int n;
-	cin >> n;
-	set<int> st;
-	for (int i = 0; i < n; i++) {
-		int tmp;
-		cin >> tmp;
-		st.insert(tmp);
-	}
-	n == st.size()
-	? cout << "Yes" << endl
-	: cout << "No" << endl;
+	string s;
+	cin >> n >> s;
+	if (s[n - 1] == 'o') cout << "Yes" << endl;
+	else cout << "No" << endl;
     return 0;
 }
