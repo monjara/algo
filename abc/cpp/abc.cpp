@@ -13,10 +13,10 @@ int main() {
 	}
 
 	int mx = -2000000;
-	for (int i = 0; i < n - 1; i++) {
-		for (int j = i + 1; j < n; j++) {
-			chmax(mx, r.at(j) - r.at(i));
-		}
+	int mn = 2000000;
+	for (int i = 1; i < n; i++) {
+		chmax(mx, r.at(i) - mn);
+		chmin(mn, r.at(i));
 	}
 	cout << mx << endl;
     return 0;
