@@ -5,12 +5,19 @@ template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true
 typedef long long ll;
 
 int main() {
-	char alfabet[26] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-	for (int i = 0; i < 26; ++i) {
-		int tmp;
-		cin >> tmp;
-		cout << alfabet[tmp - 1];
+	int n;
+	cin >> n;
+	vector<int> r(n);
+	for (int i = 0; i < n; i++) {
+		cin >> r.at(i);
 	}
-	cout << endl;
+
+	int mx = -2000000;
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = i + 1; j < n; j++) {
+			chmax(mx, r.at(j) - r.at(i));
+		}
+	}
+	cout << mx << endl;
     return 0;
 }
