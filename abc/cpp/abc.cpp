@@ -4,17 +4,15 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true
 template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true; } return false; }
 typedef long long ll;
 
-int main() {
-	int n, r;
-	cin >> n >> r;
+int gcd(int x, int y) {
+	if (x % y == 0) return y;
+	else return gcd(y, x % y);
+}
 
-	int mx = -2000000;
-	int mn = r;
-	for (int i = 1; i < n; i++) {
-		cin >> r;
-		chmax(mx, r - mn);
-		chmin(mn, r);
-	}
-	cout << mx << endl;
+int main() {
+	int x, y;
+	cin >> x >> y;
+	int ans = gcd(x, y);
+	cout << ans << endl;
     return 0;
 }
