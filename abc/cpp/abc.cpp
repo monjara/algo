@@ -4,33 +4,31 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true
 template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true; } return false; }
 typedef long long ll;
 
-void output(vector<int> a, int n) {
-	for (int i = 0; i < n; i++) {
-		if (i > 0) cout << " ";
-		cout << a.at(i);
-	}
-	cout << endl;
-}
-
-void insectionSort(vector<int> a, int n) {
-	for (int i = 0; i < n; i++) {
-		int v = a.at(i);
-		int j = i - 1;
-		while (j >= 0 && a.at(j) > v) {
-			a.at(j + 1) = a.at(j);
-			j--;
+int bubbleSort(int a[], int n) {
+	int cnt = 0;
+	bool flag = true;
+	while (flag) {
+		flag = false;
+		for (int i = n - 1; i > 0; i--) {
+			if (a[i] < a[i - 1]) {
+				swap(a[i], a[i - 1]);
+				flag = true;
+				cnt++;
+			}
 		}
-		a.at(j + 1) = v;
-		output(a, n);
 	}
+	return cnt;
 }
 
 int main() {
 	int n;
 	cin >> n;
-	vector<int> a(n);
-	for (int i = 0; i < n; i++) cin >> a.at(i);
-
-	insectionSort(a, n);
-	return 0;
+	int a[n];
+	for (int i = 0; i < n; i++) cin >> a[i];
+	int cnt = bubbleSort(a, n);
+	for (int i = 0; i < n; i++) {
+		if (i > 0) cout << " ";
+		cout << a[i];
+	}
+	cout << endl << cnt << endl;
 }
