@@ -4,21 +4,24 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true
 template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true; } return false; }
 typedef long long ll;
 
-void randomAccess(vector<ll> a, int p) {
-	cout << a.at(p) << endl;
-}
-
 int main() {
 	int q;
 	cin >> q;
-	vector<int> a;
+	deque<int> a;
 	for (int i = 0; i < q; i++) {
-		int idx, x;
+		int idx, pd, x;
 		cin >> idx;
-		if (idx != 2) cin >> x;
-		if (idx == 0) a.push_back(x);
-		else if (idx == 1) cout << a.at(x) << endl;;
-		else if (idx == 2) a.pop_back();
+		if (idx == 0) cin >> pd >> x;
+		else cin >> pd;
+		if (idx == 0) {
+			if (pd == 0) a.push_front(x);
+			else a.push_back(x);
+		}
+		else if (idx == 1) cout << a.at(pd) << endl;
+		else if (idx == 2) {
+			if (pd == 0) a.pop_front();
+			else a.pop_back();
+		}
 	}
 	return 0;
 }
