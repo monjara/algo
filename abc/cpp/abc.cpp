@@ -5,23 +5,26 @@ template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true
 typedef long long ll;
 
 int main() {
+	list<int> l;
+	list<int>::iterator itr = l.begin();
 	int q;
 	cin >> q;
-	deque<int> a;
 	for (int i = 0; i < q; i++) {
-		int idx, pd, x;
-		cin >> idx;
-		if (idx == 0) cin >> pd >> x;
-		else cin >> pd;
-		if (idx == 0) {
-			if (pd == 0) a.push_front(x);
-			else a.push_back(x);
+		int a, b;
+		cin >> a;
+		if (a < 2) cin >> b;
+		if (a == 0) itr = l.insert(itr, b);
+		else if (a == 1) {
+			for (int i = 0; i < abs(b); i++) {
+				if (b > 0) itr++;
+				else itr--;
+			}
 		}
-		else if (idx == 1) cout << a.at(pd) << endl;
-		else if (idx == 2) {
-			if (pd == 0) a.pop_front();
-			else a.pop_back();
-		}
+		else if (a == 2) itr = l.erase(itr);
+	}
+
+	for (itr= l.begin();itr != l.end(); ++itr) {
+		cout << *itr << endl;
 	}
 	return 0;
 }
