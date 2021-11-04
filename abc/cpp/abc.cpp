@@ -5,25 +5,10 @@ template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true
 typedef long long ll;
 
 int main() {
-	int h, w;
-	cin >> h >> w;
-	vector<vector<int>> a(h, vector<int>(w));
-	for (int i = 0; i < h; i++) {
-		for (int j = 0; j < w; j++) {
-			cin >> a.at(i).at(j);
-		}
-	}
-	bool flg = true;
-	for (int i = 0; i < h - 1; i++) {
-		for (int j = i + 1; j < h; j++) {
-			for (int k = 0; k < w - 1; k++) {
-				for (int l = k + 1; l < w; l++) {
-					if (a.at(i).at(k) + a.at(j).at(l) > a.at(j).at(k) + a.at(i).at(l)) flg = false;
-				}
-			}
-		}
-	}
-	if (flg) cout << "Yes" << endl;
-	else cout << "No" << endl;
+	string S; cin >> S;
+    int ans = 3;
+    if(S[0]==S[1] && S[1]==S[2]) ans = 1;
+    else if(S[0]!=S[1] && S[1]!=S[2] && S[2]!=S[0]) ans = 6;
+	cout << ans << endl;
 	return 0;
 }
