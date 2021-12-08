@@ -2,21 +2,9 @@
 using namespace std;
 
 int main() {
-	int n;
-	cin >> n;
-	queue<int> q;
-	for (int i = 0; i < n; i++) {
-		int a;
-		cin >> a;
-		q.push(a);
-
-		if (q.size() < 2) continue;
-		int before = q.front();
-		int latest = q.back();
-		if (before == latest) cout << "stay" << endl;
-		else if (before > latest) cout << "down " << before - latest << endl;
-		else if (before < latest) cout << "up " << latest - before << endl;
-		q.pop();
-	}
+	vector<int> v(6);
+	for (int i = 0; i < 6; ++i) cin >> v.at(i);
+	sort(v.begin(), v.end(), greater<int>{});
+	cout << v.at(2) << endl;
 	return 0;
 }
