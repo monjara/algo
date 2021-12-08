@@ -2,16 +2,21 @@
 using namespace std;
 
 int main() {
-	string s;
-	cin >> s;
+	int n;
+	cin >> n;
+	queue<int> q;
+	for (int i = 0; i < n; i++) {
+		int a;
+		cin >> a;
+		q.push(a);
 
-	regex re(R"(\d{3})");
-	bool check = regex_match(s, re);
-
-	if (!check) {
-		cout << "error" << endl;
-		return 0;
+		if (q.size() < 2) continue;
+		int before = q.front();
+		int latest = q.back();
+		if (before == latest) cout << "stay" << endl;
+		else if (before > latest) cout << "down " << before - latest << endl;
+		else if (before < latest) cout << "up " << latest - before << endl;
+		q.pop();
 	}
-	cout << stoi(s) * 2 << endl;
 	return 0;
 }
