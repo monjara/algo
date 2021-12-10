@@ -2,17 +2,14 @@
 using namespace std;
 
 int main() {
-	int n;
-	cin >> n;
-	int ans = 0;
-	for (int i = 0; i < n; i++) {
-		int a;
-		cin >> a;
-		a -= 10;
-		if (a > 0) {
-			ans += a;
+	int a, b, c;
+	cin >> a >> b >> c;
+	for (int i = a; i <= b; i++) {
+		if (i % c == 0) {
+			cout << i << endl;
+			return 0;
 		}
 	}
-	cout << ans << endl;
+	cout << "-1" << endl;
 	return 0;
 }
