@@ -1,14 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
+typedef long long ll;
 
 int main() {
-	int x, y;
-	cin >> x >> y;
-	int ans = 0;
-	while (x < y) {
-		x += 10;
-		ans++;
+	int l, r;
+	string s;
+	cin >> l >> r >> s;
+	l--;
+    r--;
+	while (l < r) {
+		swap(s[l], s[r]);
+		l++;
+		r--;
 	}
-	cout << ans << endl;
+	cout << s << endl;
 	return 0;
 }
