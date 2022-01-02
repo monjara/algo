@@ -3,16 +3,9 @@ using namespace std;
 typedef long long ll;
 
 int main() {
-	int l, r;
-	string s;
-	cin >> l >> r >> s;
-	l--;
-    r--;
-	while (l < r) {
-		swap(s[l], s[r]);
-		l++;
-		r--;
-	}
-	cout << s << endl;
+	double d;
+	cin >> d;
+	double ans = d / 100;
+	cout << ans << endl;
 	return 0;
 }
