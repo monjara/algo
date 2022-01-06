@@ -3,14 +3,14 @@ using namespace std;
 typedef long long ll;
 
 int main() {
-	int a, b, c;
-	cin >> a >> b >> c;
-	if ((a == 5 && b == 5 && c == 7) 
-	|| (a == 5 && b == 7 && c == 5)
-	|| (a == 7 && b == 5 && c == 5)) {
-		cout << "YES" << endl;
-		return 0;
+	int n, l;
+	cin >> n >> l;
+	vector<string> v(n);
+	for (int i = 0; i < n; i++) cin >> v.at(i);
+	sort(v.begin(), v.end());
+	for (int i = 0; i < n; i++) {
+		cout << v.at(i);
 	}
-	cout << "NO" << endl;
+	cout << endl;
 	return 0;
 }
