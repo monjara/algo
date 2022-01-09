@@ -2,30 +2,15 @@
 using namespace std;
 typedef long long ll;
 
+int f(int x) {
+	int retval = (x * x) + (2 * x) + 3;
+	return retval;
+}
+
 int main() {
-	int n, k;
-	cin >> n >> k;
-	vector<char> v(k);
-	for (int i = 0; i < k; i++) cin >> v.at(i);
-	while (true) {
-		string s_n = to_string(n);
-		bool check = true;
-		for (int i = 0; i < s_n.length(); i++) {
-			for (int j = 0; j < k; j++) {
-				if (s_n[i] == v.at(j)) {
-					check = false;
-				    break;
-				}
-			}
-			if (!check) break;
-		}
-
-		if (check) {
-			cout << n << endl;
-			break;
-		}
-
-		n++;
-	}
+	int t;
+	cin >> t;
+	int ans = f(f(f(t)+t)+f(f(t)));
+	cout << ans << endl;
 	return 0;
 }
