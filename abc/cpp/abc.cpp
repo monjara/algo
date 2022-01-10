@@ -2,15 +2,16 @@
 using namespace std;
 typedef long long ll;
 
-int f(int x) {
-	int retval = (x * x) + (2 * x) + 3;
-	return retval;
-}
-
 int main() {
-	int t;
-	cin >> t;
-	int ans = f(f(f(t)+t)+f(f(t)));
-	cout << ans << endl;
+	int s, t, x;
+	cin >> s >> t >> x;
+    if (s <= t){
+        if (s <= x && x < t) cout << "Yes" << endl;
+        else cout << "No" << endl;
+    } 
+	else {
+        if (s <= x || x < t) cout << "Yes" << endl;
+        else cout << "No" << endl;
+    }
 	return 0;
 }
