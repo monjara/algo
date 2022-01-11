@@ -3,21 +3,17 @@ using namespace std;
 typedef long long ll;
 
 int main() {
-	string s;
-	cin >> s;
-	string ans;
-	for (int i = 0; i < s.size(); i++) {
-		if (s[i] == '0') {
-			ans += '0';
+	int n;
+	cin >> n;
+	vector<int> a(n);
+	for (int i = 0; i < n; i++) cin >> a.at(i);
+	int ans = 999999999;
+	for (int i = -100; i <= 100; i++) {
+		int tmp = 0;
+		for (int j = 0; j < n; j++) {
+			tmp += (a.at(j) - i) * (a.at(j) - i);
 		}
-		else if (s[i] == '1') {
-			ans += '1';
-		}
-		else {
-			if (!ans.empty()) {
-				ans.erase(ans.size() - 1);
-			}
-		}
+		ans = min(ans, tmp);
 	}
 	cout << ans << endl;
 	return 0;
