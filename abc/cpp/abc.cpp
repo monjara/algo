@@ -3,18 +3,21 @@ using namespace std;
 typedef long long ll;
 
 int main() {
-	int n;
-	cin >> n;
-	vector<int> a(n);
-	for (int i = 0; i < n; i++) cin >> a.at(i);
-	int ans = 999999999;
-	for (int i = -100; i <= 100; i++) {
-		int tmp = 0;
-		for (int j = 0; j < n; j++) {
-			tmp += (a.at(j) - i) * (a.at(j) - i);
+	string s;
+	cin >> s;
+	int size = s.size();
+	for (int i = 0; i < size - 1; i++) {
+		if (s[i] == s[i + 1]) {
+			cout << i + 1 << " " << i + 2 << endl;
+			return 0;
 		}
-		ans = min(ans, tmp);
 	}
-	cout << ans << endl;
+	for (int i = 0; i < size - 2; i++) {
+		if (s[i] == s[i + 2]) {
+			cout << i + 1 << " " << i + 3 << endl;
+			return 0;
+		}
+	}
+	cout << -1 << " " << -1 << endl;
 	return 0;
 }
