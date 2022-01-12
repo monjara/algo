@@ -3,11 +3,21 @@ using namespace std;
 typedef long long ll;
 
 int main() {
-	int n, k, x, y;
-	cin >> n >> k >> x >> y;
-	int ans;
-	if (n <= k) ans = x * n;
-	else ans = x * k + y * (n - k);
+	ll n;
+	cin >> n;
+	string ans;
+	while (n > 0)
+	{
+		if (n % 2 == 0) {
+				ans += 'B';
+				n /= 2;
+		}
+		else {
+				ans += 'A';
+				n--;
+		}
+	}
+	reverse(ans.begin(), ans.end());
 	cout << ans << endl;
 	return 0;
 }
