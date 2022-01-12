@@ -3,21 +3,11 @@ using namespace std;
 typedef long long ll;
 
 int main() {
-	string s;
-	cin >> s;
-	int size = s.size();
-	for (int i = 0; i < size - 1; i++) {
-		if (s[i] == s[i + 1]) {
-			cout << i + 1 << " " << i + 2 << endl;
-			return 0;
-		}
-	}
-	for (int i = 0; i < size - 2; i++) {
-		if (s[i] == s[i + 2]) {
-			cout << i + 1 << " " << i + 3 << endl;
-			return 0;
-		}
-	}
-	cout << -1 << " " << -1 << endl;
+	int n, k, x, y;
+	cin >> n >> k >> x >> y;
+	int ans;
+	if (n <= k) ans = x * n;
+	else ans = x * k + y * (n - k);
+	cout << ans << endl;
 	return 0;
 }
