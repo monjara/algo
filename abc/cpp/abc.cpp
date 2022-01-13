@@ -3,21 +3,14 @@ using namespace std;
 typedef long long ll;
 
 int main() {
-	ll n;
+	int n;
 	cin >> n;
-	string ans;
-	while (n > 0)
-	{
-		if (n % 2 == 0) {
-				ans += 'B';
-				n /= 2;
-		}
-		else {
-				ans += 'A';
-				n--;
-		}
+	int ans = 0; 
+	for (int i = 0; i < n; i++) {
+		int tmp;
+		cin >> tmp;
+		if (tmp >= 10) ans += tmp - 10;
 	}
-	reverse(ans.begin(), ans.end());
 	cout << ans << endl;
 	return 0;
 }
