@@ -3,16 +3,16 @@ using namespace std;
 typedef long long ll;
 
 int main() {
-	string s, ans;
-	int a, b;
-	cin >> s >> a >> b;
-	a--;
-	b--;
-	for (int i = 0; i < s.length(); i++) {
-		if (i == a) ans += s[b];
-		else if (i == b) ans += s[a];
-		else ans += s[i];
+	int n;
+	cin >> n;
+	int ans = ((1 + n) * n) * 2;
+	int sum = 0;
+	for (int i = 0; i < 4 * n - 1; i++) {
+		int tmp;
+		cin >> tmp;
+		sum += tmp;
 	}
+	ans -= sum;
 	cout << ans << endl;
 	return 0;
 }
