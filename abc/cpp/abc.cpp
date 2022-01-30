@@ -3,11 +3,20 @@ using namespace std;
 typedef long long ll;
 
 int main() {
-	ll n;
-	cin >> n;
-	if (pow(-2, 31) <= n && n < pow(2, 31)) {
-		cout << "Yes" << endl;
+	int h, w;
+	cin >> h >> w;
+	vector<vector<int>> a(h, vector<int>(w));
+	for (int i = 0; i < h; i++) {
+		for (int j = 0; j < w; j++) {
+			cin >> a.at(i).at(j);
+		}
 	}
-	else cout << "No" << endl;
+	for (int i = 0; i < w; i++) {
+		for (int j = 0; j < h; j++) {
+			cout << a.at(j).at(i);
+			if (j != h - 1) cout << " ";
+		}
+		cout << endl;
+	}
 	return 0;
 }
