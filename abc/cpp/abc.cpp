@@ -3,13 +3,8 @@ using namespace std;
 typedef long long ll;
 
 int main() {
-	int n;
-	cin >> n;
-	vector<int> a(n);
-	for (int i = 0; i < n; i++) cin >> a.at(i);
-	sort(a.begin(), a.end());
-	decltype(a)::iterator res = unique(a.begin(), a.end());
-	a.erase(res, a.end());
-	cout << a.size() << endl;
+	vector<int> a(10);
+	for (int i = 0; i <= 9; i++) cin >> a.at(i);
+	cout << a.at(a.at(a.at(0))) << endl;
 	return 0;
 }
