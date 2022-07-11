@@ -1,3 +1,3 @@
 x = input()
-print('0', end='')
-print(x[0:3])
+x *= 6 // len(x)
+print(x)
