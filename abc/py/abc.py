@@ -1,6 +1,5 @@
-n, a, x, y = map(int, input().split())
-if n > a:
-	ans = x * a + y * (n - a)
+n, m, x, t, d = map(int, input().split())
+if x <= m:
+	print(t)
 else:
-	ans = x * n
-print(ans)
+	print(t-(x-m)*d)
