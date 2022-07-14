@@ -1,5 +1,7 @@
-n, a, x, y = map(int, input().split())
-if n <= a:
-	print(n * x)
+n = int(input())
+s = input()
+
+if (s.find('1') % 2 == 0):
+	print('Takahashi')
 else:
-	print(x * a + ((n - a) * y))
+	print('Aoki')
