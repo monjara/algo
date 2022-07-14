@@ -1,7 +1,5 @@
-n = int(input())
-s = input()
-
-if (s.find('1') % 2 == 0):
-	print('Takahashi')
+a, b = map(int, input().split())
+if (a < b):
+	print(b - a + 1)
 else:
-	print('Aoki')
+	print(0)
