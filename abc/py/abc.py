@@ -1,4 +1,8 @@
-x = int(input())
+a, b = map(int, input().split())
 
-ans = x if x > 0 else 0
-print(ans)
+if ( 0 < a ) & ( b == 0 ):
+	print('Gold')
+elif ( a == 0 ) & ( 0 < b ):
+	print('Silver')
+elif ( 0 < a ) & ( 0 < b ):
+	print ('Alloy')
