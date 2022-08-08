@@ -1,8 +1,10 @@
-a, b = map(int, input().split())
+def fibonacci(n):
+	if n == 0:
+		return 1
+	elif n == 1:
+		return 1
+	else:
+		return fibonacci(n - 1) + fibonacci(n - 2)
 
-if ( 0 < a ) & ( b == 0 ):
-	print('Gold')
-elif ( a == 0 ) & ( 0 < b ):
-	print('Silver')
-elif ( 0 < a ) & ( 0 < b ):
-	print ('Alloy')
+for i in range(8):
+	print(fibonacci(i))
