@@ -1,10 +1,16 @@
-def fibonacci(n):
-	if n == 0:
-		return 1
-	elif n == 1:
-		return 1
-	else:
-		return fibonacci(n - 1) + fibonacci(n - 2)
+def binary_search(data, value):
+	left = 0
+	right = len(data) - 1
+	while left <= right:
+		mid = (left + right)
+		if data[mid] == value:
+			return mid
+		elif data[mid] < value:
+			left = mid + 1
+		else:
+			right = mid - 1
+	return -1
 
-for i in range(8):
-	print(fibonacci(i))
+data = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+print(binary_search(data, 10))
+
